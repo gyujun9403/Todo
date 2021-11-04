@@ -1,8 +1,10 @@
-package study.rsa101.todo.model;
+package study.rsa101.todo.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import study.rsa101.todo.model.TodoEntity;
+import study.rsa101.todo.persistence.TodoRepository;
 
 import java.util.List;
 

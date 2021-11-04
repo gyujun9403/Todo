@@ -1,6 +1,7 @@
-package study.rsa101.todo.model;
+package study.rsa101.todo.dto;
 
 import lombok.Data;
+import study.rsa101.todo.model.TodoEntity;
 
 @Data
 public class TodoDTO {
