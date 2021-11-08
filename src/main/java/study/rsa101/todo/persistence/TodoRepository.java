@@ -8,7 +8,7 @@ import study.rsa101.todo.model.TodoEntity;
 import java.util.List;
 
 @Repository
-public interface TodoRepository extends JpaRepository<TodoEntity, Long> {
-    @Query("select * from Todo t where t.userId = ?1")
+public interface TodoRepository extends JpaRepository<TodoEntity, String> {
+    //@Query("select * from Todo t where t.userId = ?1")
     public List<TodoEntity> findByUserId(String userId);
 }
