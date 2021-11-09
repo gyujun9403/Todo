@@ -60,7 +60,9 @@ public class TodoController{
 
     @DeleteMapping
     public ResponseEntity<?> TodoDelete(@RequestBody TodoDTO dto) {
-        List<TodoDTO> dtoList = service.delete(new TodoEntity(dto))
+        TodoEntity tempEntity = new TodoEntity(dto);
+        tempEntity.setUserId(tempUserId);
+        List<TodoDTO> dtoList = service.delete(tempEntity)
                 .stream().map(x -> TodoEntity.entityToDTO(x)).collect(Collectors.toList());
         ResponseDTO<TodoDTO> response = ResponseDTO.<TodoDTO>builder().data(dtoList).build();
         return ResponseEntity.ok(response);
